@@ -1,0 +1,38 @@
+$${
+UNSAFE(0);
+	IFMATCHES(%CHATCLEAN%,^\[(Auc|Tr|G|D|L)\] [^ ]+ has been kicked.);
+
+	ELSE;
+		IFMATCHES(%CHATCLEAN%,^\[(Auc|Tr|G|D|L)\]);
+			MATCH(%CHAT%,^[^:]*: (.+),{&chat})
+			MATCH(%CHAT%,^..\[(.+?)\]\s?.*?\]?[^\]]*\]? ([^:]+)(.[0-9a-f]): .*,{&channel,&username,&chatcolor})
+			SET(&newchat,%&chatcolor%%&chat%);
+			#id = 15;
+			DO(15);
+				#id2 = %#id%-1;
+				SET(@&zcolor[%#id%],%@&zcolor[%#id2%]%);
+				SET(@&zchat[%#id%],%@&zchat[%#id2%]%);
+				SET(@&zname[%#id%],%@&zname[%#id2%]%);
+				SET(@&zchannel[%#id%],%@&zchannel[%#id2%]%);
+				DEC(#id);
+			LOOP;
+			
+			SET(@&zcolor[0],%&chatcolor%);
+			SET(@&zname[0],%&username%);
+			SET(@&zchannel[0],%&channel%);
+			SET(@&zchat[0],%&newchat%);
+			#id = 0
+			#id2 = 15
+			DO(16);
+				SETLABEL(chat%#id%,%@&zchat[%#id2%]%);
+				SETLABEL(name%#id%,%@&zname[%#id2%]%);
+				SETLABEL(channel%#id%,%@&zcolor[%#id2%]%[%@&zchannel[%#id2%]%]);
+
+				INC(#id);
+				DEC(#id2);
+			LOOP;
+			
+		ENDIF;
+	ENDIF;
+ENDUNSAFE;
+}$$

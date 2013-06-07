@@ -1,0 +1,12 @@
+$${
+IF(autouse);
+    UNSET(autouse);
+    STOP(autouse);
+    LOG("&6[&4MACRO&6]&c AUTOUSE DISABLED");
+ELSE;
+    SET(autouse);
+    LOG("&6[&4MACRO&6]&c AUTOUSE ENABLED");
+    EXEC("autouse1.txt","autouse");
+ENDIF;
+
+}$$

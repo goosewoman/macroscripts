@@ -1,0 +1,9 @@
+$${
+DO;
+    SET(@list);
+    ECHO("/who");
+    WAIT(5);
+    UNSET(@list);
+    WAIT(55);
+LOOP;
+}$$

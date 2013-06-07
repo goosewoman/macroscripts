@@ -1,0 +1,9 @@
+$${
+SET(@#helmetdur,%HELMDURABILITY%);
+SET(@#chestdur,%CHESTPLATEDURABILITY%);
+SET(@#leggingsdur,%LEGGINGSDURABILITY%);
+SET(@#bootsdur,%BOOTSDURABILITY%);
+SET(&var1,$$[1]);
+IF(((@#helmetdur < 60)||(@#chestdur < 60)||(@#leggingsdur < 60)||(@#bootsdur < 60))&&(&var1=="p2"));
+    LOG("&4WARNING: ARMOUR CRITICALLY LOW!");
+ENDIF;

@@ -1,0 +1,5 @@
+$${
+IF(DURABILITY <= 5);
+    ECHO("/repair all");
+ENDIF;
+}$$

@@ -1,0 +1,47 @@
+$${
+UNSAFE(0);
+    #id = 0;
+    DO(14);
+        #id2 = %#id%+1;
+        SET(@&joinedplayers[%#id%],%@&joinedplayers[%#id2%]%);
+        INC(#id);
+    LOOP;
+
+    SET(&joinedplayer,%JOINEDPLAYER%);
+    LOWER(&joinedplayer,%&joinedplayer%);
+    //LOG(%&joinedplayer%);
+    SET(&test,@&c%&joinedplayer%);
+    SET(&test,%%&test%%);
+    //LOG(%&test%);
+    IFMATCHES(%&test%,^$)
+        SET(&joinedplayer,%JOINEDPLAYER%);
+    ELSE;
+        IFMATCHES(%&test%,^\%.*)
+            SET(&joinedplayer,%JOINEDPLAYER%);
+        ELSE;
+            SET(&joinedplayer,%&test%);
+        ENDIF;
+    ENDIF;
+    SET(@&joinedplayers[14],%&joinedplayer%);
+    &message = "&4Joined Players:"
+    FOREACH(@&joinedplayers,&name)
+        BETTERSTRIP(&ncname,%&name%);
+        LOWER(&lcname,%&ncname%);
+        //LOG(%&lcname%);
+        SET(&test,@&c%&lcname%);
+        SET(&test,%%&test%%);
+        IFMATCHES(%&test%,^$)
+        ELSE;
+            IFMATCHES(%&test%,^\%.*)
+                SET(&name,%&name%);
+            ELSE;
+                SET(&name,%&test%);
+                //LOG(%&name%);
+            ENDIF;
+        ENDIF;
+        &message = %&message%\n&f%&name%;
+    NEXT;
+    SETLABEL(joinedgame,%&message%)
+    SETLABEL(joinedgame2,%&message%)
+ENDUNSAFE;
+}$$

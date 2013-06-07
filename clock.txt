@@ -1,0 +1,6 @@
+$${
+DO;
+    SETLABEL(clock,%TIME%);
+    WAIT(1);
+LOOP;
+}$$

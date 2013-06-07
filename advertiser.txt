@@ -1,0 +1,13 @@
+$${
+&shopad = "/ch qm tr Buying Oak logs at $32/stack and leaves at $8/stack! Go to shop 8, red side, underground.";
+&lucus = "/ch qm tr Support Lucus! see http://tinyurl.com/ecclucus for more information!";
+&sapling = "/ch qm tr Selling saplings at $0.11/ea, Buying oak logs at $0.50/ea. Shop 8, red side, underground";
+PROMPT(&return,"$$[[shopad,lucus,sapling]]","ADVERTISE!",true);
+IFMATCHES(%&return%,^$);
+    LOG("&6[&4MACRO&6]&c Action cancelled!");
+ELSE;
+    &var = &%&return%;
+    ECHO(%%&var%%);
+ENDIF;
+}$$
+

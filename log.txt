@@ -1,0 +1,4 @@
+$${
+LOGTO("log-%SERVER%-%DATE%.txt",%TIME% %CHATCLEAN%);
+}$$
+

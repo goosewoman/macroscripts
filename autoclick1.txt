@@ -1,0 +1,5 @@
+$${
+DO;
+    KEY(attack);
+LOOP;
+}$$

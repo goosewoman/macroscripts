@@ -1,0 +1,7 @@
+$${
+IFMATCHES(%CHATCLEAN%,^(From|To) [^ ]+: .+)
+    LOGTO(pm,%CHAT%);
+    LOGTO(pm2,[%TIME%] %CHAT%);
+ENDIF;
+
+}$$

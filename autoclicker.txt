@@ -1,0 +1,12 @@
+$${
+IF(autoclick);
+    UNSET(autoclick);
+    STOP(autoclicker);
+    LOG("&6[&4MACRO&6]&c AUTOCLICKER DISABLED");
+ELSE;
+    SET(autoclick);
+    LOG("&6[&4MACRO&6]&c AUTOCLICKER ENABLED");
+    EXEC("autoclick1.txt","autoclicker");
+ENDIF;
+
+}$$
