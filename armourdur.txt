@@ -1,8 +1,8 @@
 $${
-// For OnArmorDurabilityChange, but can be binded to a key, too.
+// USE: Bind to onArmourDurabilityChange and create labels in your preferred GUI named helmetdur, chestdur, leggingsdur and bootsdur
 
-SET(@#helmetdur,%HELMDURABILITY%);
-SET(@#chestdur,%CHESTPLATEDURABILITY%);
-SET(@#leggingsdur,%LEGGINGSDURABILITY%);
-SET(@#bootsdur,%BOOTSDURABILITY%);
+SETLABEL(helmetdur,%HELMDURABILITY%);
+SETLABEL(chestdur,%CHESTPLATEDURABILITY%);
+SETLABEL(leggingsdur,%LEGGINGSDURABILITY%);
+SETLABEL(bootsdur,%BOOTSDURABILITY%);
 }$$
