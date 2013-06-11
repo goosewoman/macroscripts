@@ -1,11 +1,14 @@
 $${
+// USE: Bind to a key
+// NOTE: This requires autoclick1.txt
+
 IF(autoclick);
     UNSET(autoclick);
     STOP(autoclicker);
-    LOG("&6[&4MACRO&6]&c AUTOCLICKER DISABLED");
+    LOG("&6[&4KukeMacro&6]&c AUTOCLICKER DISABLED");
 ELSE;
     SET(autoclick);
-    LOG("&6[&4MACRO&6]&c AUTOCLICKER ENABLED");
+    LOG("&6[&4KukeMacro&6]&c AUTOCLICKER ENABLED");
     EXEC("autoclick1.txt","autoclicker");
 ENDIF;
 
