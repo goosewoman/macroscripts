@@ -1,4 +1,7 @@
 $${
+// USE: Bind to onDurabilityChange
+// NOTE: Does not work on shears yet (Will be fixed next MacroMod update
+
 IF(DURABILITY <= 5);
     ECHO("/repair all");
 ENDIF;
