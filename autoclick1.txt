@@ -1,5 +1,6 @@
 $${
 DO;
     KEY(attack);
+    WAIT(10ms);
 LOOP;
 }$$
