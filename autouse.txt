@@ -1,4 +1,6 @@
 $${
+// USE: Bind to a key or button.
+// NOTE: Requires autouse1.txt
 IF(autouse);
     UNSET(autouse);
     STOP(autouse);
