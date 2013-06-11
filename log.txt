@@ -1,4 +1,5 @@
 $${
+// USE: Bind to onChat
+// Logs are saved to .minecraft/mods/macros/logs/
 LOGTO("log-%SERVER%-%DATE%.txt",%TIME% %CHATCLEAN%);
 }$$
-
