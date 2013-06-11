@@ -1,0 +1,33 @@
+$${
+// USE: Bind to a key
+// NOTE: This is solely meant for people to learn from, it has no usage aside from that.
+// NOTE: I will not explain how this macro works, the comments explain enough and if you can't understand
+// NOTE: the comments then I can't help you understand it either, seeing as I wrote those comments.
+
+//set vars
+&array1[0] = "array2";
+&array2[0] = "test";
+
+// Set another variable with the variable name to prevent broken variables.
+// This is a little trick Mumfrey taught me.
+&var = &%&array1[0]%[0];
+// Use two sets of '%' around the variable so that it works properly.
+// This is done because the previous variable has the name of the variable,
+// so you have to execute the variable twice to get the value of the dynamic variable.
+LOG(Example1: %%&var%%);
+
+//I'll give an easier example here;
+
+// This var contains the name of the third variable.
+&var1 = "var3";
+
+// This is the dynamic double variable that contains the variable as a string.
+&var2 = &%&var1%;
+
+// This is the content of the third variable.
+&var3 = "&2Rawr!"
+
+// Here you turn &var2 in a string, which is "&var3"
+// Now a second pair of '%' around it so that "&var3" becomes "&2rawr"
+LOG(Example2: %%&var2%%);
+}$$
