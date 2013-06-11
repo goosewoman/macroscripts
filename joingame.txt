@@ -1,5 +1,7 @@
 $${
-// For onPlayerJoined
+// USE: Bind to onPlayerJoined and create a multiline label called "joinedgame" in your preferred GUI.
+// NOTE: This requires the extracommands module, found in the modules folder
+
 UNSAFE(0);
 
     #id = 0;
