@@ -1,11 +1,12 @@
 $${
+// for onChat
 UNSAFE(0);
 	IFMATCHES(%CHATCLEAN%,^\[(Auc|Tr|G|D|L)\] [^ ]+ has been kicked.);
 
 	ELSE;
 		IFMATCHES(%CHATCLEAN%,^\[(Auc|Tr|G|D|L)\]);
 			MATCH(%CHAT%,^[^:]*: (.+),{&chat})
-			MATCH(%CHAT%,^..\[(.+?)\]\s?.*?\]?[^\]]*\]? ([^:]+)(.[0-9a-f]): .*,{&channel,&username,&chatcolor})
+			MATCH(%CHAT%,^..\[(.+?)\]\s?.*?\]?[^\]]*\]? ([^:]+)(.[0-9a-f]): .*,{&channel,&username,&chatcolor});
 			SET(&newchat,%&chatcolor%%&chat%);
 			#id = 15;
 			DO(15);
