@@ -1,14 +1,6 @@
 $${
 DO;
     KEY(use);
-    //GETSLOTITEM(%INVSLOT%,#id,#stack,#data);
-    //IF(#stack == 0 && #id == 0 && #data == 0);
-    //    NEXT;
-    //ELSE;
-    //    IF(#stack < 5)
-    //        INVENTORYUP(1);
-    //    ENDIF;
-    //ENDIF;
     WAIT(15ms);
 LOOP;
 }$$
