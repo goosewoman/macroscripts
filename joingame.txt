@@ -1,4 +1,5 @@
 $${
+// For onPlayerJoined
 UNSAFE(0);
 
     #id = 0;
