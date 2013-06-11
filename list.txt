@@ -1,7 +1,9 @@
 $${
+// USE: Bind to a key or button
+// NOTE: This is best used with the chatfilter module, found in the modules folder.
 DO;
     SET(@list);
-    ECHO("/who");
+    ECHO("/elist");
     WAIT(3);
     UNSET(@list);
     WAIT(57);
