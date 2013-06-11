@@ -2,8 +2,8 @@ $${
 DO;
     SET(@list);
     ECHO("/who");
-    WAIT(5);
+    WAIT(3);
     UNSET(@list);
-    WAIT(55);
+    WAIT(57);
 LOOP;
 }$$
