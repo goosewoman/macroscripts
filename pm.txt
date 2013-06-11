@@ -1,6 +1,6 @@
 $${
+// USE: Bind to onChat and create a label called lastpm in your preferred GUI.
 IFMATCHES(%CHATCLEAN%,^(From|To) [^ ]+: .+)
-    LOGTO(pm,%CHAT%);
-    LOGTO(pm2,[%TIME%] %CHAT%);
+    SETLABEL(lastpm,%CHAT%);
 ENDIF;
 }$$
