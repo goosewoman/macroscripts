@@ -1,4 +1,6 @@
 $${
+// USE: Bind to a key, button or event and create a label called 'clock' in your preferred GUI.
+
 DO;
     SETLABEL(clock,%TIME%);
     WAIT(1);
