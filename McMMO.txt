@@ -1,0 +1,73 @@
+$${
+// GATHERING SKILLS
+IFMATCHES(%CHATCLEAN%,^Excavation: ([0-9]+).*,@#excavation,1);
+ENDIF;
+IFMATCHES(%CHATCLEAN%,^Excavation skill increased by ([0-9]+).*,#level,1);
+    @#excavation = @#excavation + #level;
+ENDIF;
+
+IFMATCHES(%CHATCLEAN%,^Fishing: ([0-9]+).*,@#fishing,1);
+ENDIF;
+IFMATCHES(%CHATCLEAN%,^Fishing skill increased by ([0-9]+).*,#level,1);
+    @#fishing = @#fishing + #level;
+ENDIF;
+
+IFMATCHES(%CHATCLEAN%,^Herbalism: ([0-9]+).*,@#herbalism,1);
+ENDIF;
+IFMATCHES(%CHATCLEAN%,^Herbalism skill increased by ([0-9]+).*,#level,1);
+    @#herbalism = @#herbalism + #level;
+ENDIF;
+
+IFMATCHES(%CHATCLEAN%,^Mining: ([0-9]+).*,@#mining,1);
+ENDIF;
+IFMATCHES(%CHATCLEAN%,^Mining skill increased by ([0-9]+).*,#level,1);
+    @#mining = @#mining + #level;
+	@#smelting = @#mining
+ENDIF;
+
+IFMATCHES(%CHATCLEAN%,^Woodcutting: ([0-9]+).*,@#woodcutting,1);
+ENDIF;
+IFMATCHES(%CHATCLEAN%,^Woodcutting skill increased by ([0-9]+).*,#level,1);
+    @#woodcutting = @#woodcutting + #level;
+ENDIF;
+
+
+// COMBAT SKILLS
+IFMATCHES(%CHATCLEAN%,^Archery: ([0-9]+).*,@#archery,1);
+ENDIF;
+IFMATCHES(%CHATCLEAN%,^Archery skill increased by ([0-9]+).*,#level,1);
+    @#archery = @#archery + #level;
+ENDIF;
+
+IFMATCHES(%CHATCLEAN%,^Axes: ([0-9]+).*,@#axes,1);
+ENDIF;
+IFMATCHES(%CHATCLEAN%,^Axes skill increased by ([0-9]+).*,#level,1);
+    @#axes = @#axes + #level;
+ENDIF;
+
+IFMATCHES(%CHATCLEAN%,^Swords: ([0-9]+).*,@#swords,1);
+ENDIF;
+IFMATCHES(%CHATCLEAN%,^Swords skill increased by ([0-9]+).*,#level,1);
+    @#swords = @#swords + #level;
+ENDIF;
+
+IFMATCHES(%CHATCLEAN%,^Unarmed: ([0-9]+).*,@#unarmed,1);
+ENDIF;
+IFMATCHES(%CHATCLEAN%,^Unarmed skill increased by ([0-9]+).*,#level,1);
+    @#unarmed = @#unarmed + #level;
+ENDIF;
+
+// MISC SKILLS
+
+IFMATCHES(%CHATCLEAN%,^Acrobatics: ([0-9]+).*,@#acrobatics,1);
+ENDIF;
+IFMATCHES(%CHATCLEAN%,^Acrobatics skill increased by ([0-9]+).*,#level,1);
+    @#acrobatics = @#acrobatics + #level;
+ENDIF;
+
+IFMATCHES(%CHATCLEAN%,^Smelting: ([0-9]+).*,@#smelting,1);
+ENDIF;
+IFMATCHES(%CHATCLEAN%,^Smelting skill increased by ([0-9]+).*,#level,1);
+ENDIF;
+
+}$$
