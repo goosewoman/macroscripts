@@ -3,49 +3,17 @@ $${
 // NOTE: This requires the extracommands module, found in the modules folder
 
 UNSAFE(0);
-
     #id = 0;
-    
     DO(14);
         #id2 = %#id%+1;
         SET(@&joinedplayers[%#id%],%@&joinedplayers[%#id2%]%);
         INC(#id);
-    LOOP;
-
-    SET(&joinedplayer,%JOINEDPLAYER%);
-    LOWER(&joinedplayer,%&joinedplayer%);
-    SET(&test,@&c%&joinedplayer%);
-    SET(&test,%%&test%%);
-    
-    IFMATCHES(%&test%,^$);
-        SET(&joinedplayer,%JOINEDPLAYER%);
-    ELSE;
-        IFMATCHES(%&test%,^\%.*);
-            SET(&joinedplayer,%JOINEDPLAYER%);
-        ELSE;
-            SET(&joinedplayer,%&test%);
-        ENDIF;
-    ENDIF;
-    
-    SET(@&joinedplayers[14],%&joinedplayer%);
-    &message = "&4Joined Players:";
-    
-    FOREACH(@&joinedplayers,&name);
-        BETTERSTRIP(&ncname,%&name%);
-        LOWER(&lcname,%&ncname%);
-        SET(&test,@&c%&lcname%);
-        SET(&test,%%&test%%);
-        IFMATCHES(%&test%,^$)
-        ELSE;
-            IFMATCHES(%&test%,^\%.*);
-                SET(&name,%&name%);
-            ELSE;
-                SET(&name,%&test%);
-            ENDIF;
-        ENDIF;
+    LOOP;    
+    SET(@&joinedplayers[14],%JOINEDPLAYER%);
+    &message = "&4Joined Players:"
+    FOREACH(@&joinedplayers,&name)
         &message = %&message%\n&f%&name%;
     NEXT;
-    
-    SETLABEL(joinedgame,%&message%);
+    SET(@&joinedgamelabel,%&message%);
 ENDUNSAFE;
 }$$
